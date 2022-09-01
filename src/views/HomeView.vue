@@ -1,9 +1,13 @@
-<script setup>
-import TheWelcome from '@/components/TheWelcome.vue'
+<template>
+  <h3>adsjadhasjsd</h3>
+</template>
+
+<script>
+export default {
+
+}
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style>
+
+</style>
