@@ -96,7 +96,6 @@ export default {
       .get('https://fakestoreapi.com/products?limit=10')
       .then(response => (
         this.suggestedProducts = response.data
-        // console.log(response)
       ));
     console.log(this.suggestedProducts)
   }

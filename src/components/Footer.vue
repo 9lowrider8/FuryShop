@@ -4,15 +4,20 @@
         <div id="right">
             <ul>
                 <li><a href="">صفحه اصلی</a></li>
-                <li><a href="">صفحه دومی</a></li>
-                <li><a href="">صفحه سومی</a></li>
-                <li><a href="">صفحه چهارمی</a></li>
+                <li><a href="">پوشاک</a></li>
+                <li><a href="">مد و زیبایی</a></li>
+                <li><a href="">لنت ترمز</a></li>
             </ul>
             <ul>
-                <li><a href="">صفحه فرعی</a></li>
-                <li><a href="">صفحه فرعی دوم</a></li>
-                <li><a href="">صفحه فرعی سوم</a></li>
-
+                <li><a href="">کتابچه</a></li>
+                <li><a href="">ساعت شیائومی</a></li>
+                <li><a href="">فرش</a></li>
+            </ul>
+            <ul>
+                <li><a href="">هارد اینترنال</a></li>
+                <li><a href="">بوق خودرو</a></li>
+                <li><a href="">تشک خوشخواب</a></li>
+                <li><a href="">سبزی خوردکن</a></li>
             </ul>
         </div>
         <div id="left">
