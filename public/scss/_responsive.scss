@@ -1,0 +1,179 @@
+@media (max-width:940px){
+    #discount {
+        ul {
+            @include fg($justify: space-evenly);
+            li{
+                width: 23%;
+            }
+        }
+    }
+    #header {
+        #top{
+            @include fg($justify: space-between);
+            #logo{
+                width: 20%;
+                padding-right: 1.7rem;
+            }
+            input {
+                width: 45%;
+            }
+            #cart{
+                width: 20%;
+            }
+        }
+    }
+    #footer{
+        @include fg($justify: space-between);
+        width: 100%;
+        #right{
+            @include fg($justify: space-between);
+            width:60%;
+            ul{
+                width: 20%;
+                margin: .1rem;
+                padding: .1rem;
+            }
+        }
+        #left {
+            width: 25%;
+        }
+    }
+    #slide {
+        height: 80px;
+        img {
+            width: 90%;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+}
+//////////////////////////768//////////////////////////////////
+
+@media (max-width: 768px){
+    #discount {
+        ul {
+            @include fg($justify: space-evenly);
+            li{
+                width: 32%;
+            }
+        }
+    }
+    #header {
+        #top{
+            @include fg($justify: space-between);
+            font-size: 12px; 
+            #logo{
+                width: 20%;
+                padding-right: 1.7rem;
+            }
+            input {
+                font-size: 12px; 
+                width: 45%;
+            }
+            #cart{
+                width: 20%;
+            }
+        }
+        #bottom
+        {@include fg($justify: space-evenly);
+            #site-menu{
+                font-size: 12px;
+                width: 100%;
+            }
+        }
+    }
+    #footer{
+        @include fg($justify: space-between);
+        width: 100%;
+        font-size: 10px;
+        #right{
+            @include fg($justify: space-between);
+            width:60%;
+            ul{
+                width: 20%;
+                margin: .1rem;
+                padding: .1rem;
+            }
+        }
+        #left {
+            width: 25%;
+        }
+    }
+    #slide {
+        height: 80px;
+        img {
+            width: 90%;
+        }
+        span {
+            font-size: 12px;
+        }
+    }
+
+}
+
+
+
+////////////////////////////////468//////////////////////
+
+@media (max-width: 468px) {
+    #discount {
+        ul {
+            @include fg($justify: space-evenly);
+            li{
+                width: 47%;
+            }
+        }
+    }
+    #header {
+        #top{
+            @include fg($justify: space-between);
+            font-size: 8px;
+            #logo{
+                width: 20%;
+                padding-right: 1.7rem;
+            }
+            input {
+                font-size: 8px; 
+                width: 45%;
+            }
+            #cart{
+                width: 20%;
+            }
+        }
+        #bottom
+        {@include fg($justify: space-evenly);
+            #site-menu{
+                font-size: 8px;
+                width: 100%;
+            }
+        }
+    }
+    #footer{
+        @include fg($justify: space-between);
+        width: 100%;
+        font-size: 8px;
+        #right{
+            @include fg($justify: space-between);
+            width:60%;
+            ul{
+                width: 20%;
+                margin: .1rem;
+                padding: .1rem;
+            }
+        }
+        #left {
+            width: 25%;
+        }
+    }
+    #slide {
+        height: 80px;
+        img {
+            width: 90%;
+        }
+        span {
+            font-size: 8px;
+        }
+    }
+    
+}

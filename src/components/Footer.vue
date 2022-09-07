@@ -1,6 +1,5 @@
 <template>
     <footer id="footer">
-
         <div id="right">
             <ul>
                 <li><a href="">صفحه اصلی</a></li>

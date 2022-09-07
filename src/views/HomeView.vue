@@ -47,7 +47,7 @@
     </div>
     <swiper :slidesPerView="6" :spaceBetween="8" :freeMode="true" :grabCursor="true" :centeredSlides="true"
       :modules="modules" class="mySwiper" id="secondswiper">
-      <swiper-slide class="card" v-for="(item, index) in suggestedProducts" :key="index">
+      <swiper-slide id="slide" class="card" v-for="(item, index) in suggestedProducts" :key="index">
         <a href="">
           <img :src="item.image" alt=""><span>{{ item.title }}</span>
         </a>

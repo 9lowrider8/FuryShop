@@ -8,6 +8,7 @@
     box-sizing: border-box;
     direction: rtl;
     font-family: "Yekan Bakh";
+    
 }
 #main-page {
     @include fg();
@@ -52,7 +53,7 @@ a {
         @include fg($justify: space-between);
         text-align: center;
         input {
-            width: 55%;
+            width: 50%;
         }
         #logo {
             max-width: 10%;
@@ -60,7 +61,7 @@ a {
             @include fg();
         }
         #cart {
-            width: 10%;
+            width: 15%;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
             border-radius: 7px;
             padding: 0 0.5rem;
@@ -122,7 +123,7 @@ a {
     @include fg($justify: space-evenly);
 
     #left {
-        width: 35%;
+        width: 25%;
         margin: 2rem;
         @include fg($flow: column);
         button {
@@ -130,7 +131,7 @@ a {
         }
     }
     #right {
-        width: 40%;
+        width: 60%;
         @include fg();
         box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
         ul {
@@ -180,7 +181,7 @@ a {
     margin: 1rem 1rem;
     background: $mainColor;
     border-radius: 7px;
-    .card {
+    #slide {
         height: 300px;
         padding: 0.5rem;
         margin: 1rem 0;
@@ -193,8 +194,9 @@ a {
             @include fg($flow: column);
 
             img {
-                max-width: 200px;
+                max-width: 90%;
                 max-height: 65%;
+
             }
             span {
                 text-align: center;
@@ -351,3 +353,6 @@ a {
     }
     
 }
+
+
+@import "responsive";
