@@ -1,33 +1,26 @@
 <template>
   <div>
+    <Header />
     <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Pagination, FreeMode } from 'swiper';
-
-
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-
 export default {
-  name: "App",
-  components: {
+    name:"BaseView",
+    components: {
     Header,
-    Footer,
+    Footer
   },
   setup() {
-    return {
-      modules: [],
-    };
-  },
+    
+  }
 }
 </script>
 
-<style scoped>
-img {
-  width: 100%;
-}
+<style>
+
 </style>

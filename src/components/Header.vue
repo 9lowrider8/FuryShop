@@ -6,7 +6,7 @@
       <a role="button" href="/cart" id="cart"><i class="fa fa-shopping-cart"></i><span>سبد خرید</span></a>
     </div>
     <div id="bottom">
-      <ul id="site-menu">
+      <ul id="site-menu" class="menu">
         <li>
           <i class="fa fa-shopping-cart"></i>
           <span>دیجیتال</span>

@@ -45,11 +45,30 @@
         </li>
       </ul>
     </div>
-    <swiper :slidesPerView="6" :spaceBetween="8" :freeMode="true" :grabCursor="true" :centeredSlides="true"
+    <swiper
+    :breakpoints="{
+      '370': {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      '640': {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      '768': {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      '1024': {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    }"  
+      :freeMode="true" :grabCursor="true" :centeredSlides="true"
       :modules="modules" class="mySwiper" id="secondswiper">
       <swiper-slide id="slide" class="card" v-for="(item, index) in suggestedProducts" :key="index">
         <a href="">
-          <img :src="item.image" alt=""><span>{{ item.title }}</span>
+          <img width="200" height="150" :src="item.image" alt=""><span>{{ item.title }}</span>
         </a>
       </swiper-slide>
     </swiper>
@@ -59,7 +78,7 @@
           alt=""></a>
 
     </div>
-
+    <hr>
   </div>
 </template>
 
