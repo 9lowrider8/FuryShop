@@ -1,53 +1,76 @@
 <template>
     <div class="product-view">
         <div id="up">
-            <img src="https://dkstatics-public.digikala.com/digikala-adservice-banners/ca65c9fdce4fd3d742c14012cbb853f832cb0eea_1661582505.jpg?x-oss-process=image/quality,q_95"
-                alt="">
+            <img :src="product.image" alt="">
             <div id="detail">
-                <ul>
-                    <li>
-                        <p>نام محصول مورد نظر</p>
-                    </li>
-                    <li>
-                        <p>گارانتی 20 ماهه شرکت تکنو</p>
-                    </li>
-                    <li>
-                        <p>فروشنده نوا مارکت</p>
-                    </li>
-                    <li>
-                        <p>موجود در انبار</p>
-                    </li>
-                </ul>
-                <P>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sit aliquam itaque. Ea placeat
-                    provident quos qui vitae quidem, magni unde dolorum in ipsa, dolorem sunt laudantium voluptate
-                    facilis iusto?
-                </P>
+                <div id="description">
+                    <span><i class="fa fa-sun-o" aria-hidden="true">
+                            ویژگی ها
+                        </i>
+                    </span>
+                    <p>{{product.description}}</p>
+                    <!-- <ul> 
+                        <li>موتور پرقدرت</li>
+                        <li>نگهداری شارژ بالا</li>
+                        <li>بدنه مقاوم</li>
+                        <li>ساخت آلمان</li>
+                    </ul> -->
+                </div>
+                <div id="delivery">
+                    <span>ارسال بالای 500هزار تومان به صورت رایگان است.</span>
+                    <img src="https://www.digikala.com/_next/static/media/normalFreeShippingTouchPointImage.d4416515.svg"
+                        alt="">
+                </div>
             </div>
             <div id="buy">
-                <h3>قیمت : 1650000</h3>
-                <router-link to="../cart/01">
+                <ul>
+                    <li>
+                        <p>نام: {{product.title}}</p>
+                    </li>
+                    <li>
+                        <p>{{product.rating.rate}}</p>
+                    </li>
+                    <li>
+                        <P>از {{product.rating.count}} رای</P>
+                    </li>
+                    <li>
+                        <p>
+                        دسته بندی : {{product.category}}
+                        </p>
+                    </li>
+                </ul>
+                <h3>قیمت : {{product.price}}</h3>
+                <router-link :to="{ path: '/cart/'+ product.id}">
                     <button class="btn">افزودن به سبد</button>
                 </router-link>
             </div>
         </div>
         <div id="down">
-
         </div>
     </div>
 
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
-            productId: this.$route.params.id,
+            id: this.$route.params.id,
+            product: []
         }
     },
+    created() {
+        axios
+            .get('https://fakestoreapi.com/products/' + this.id)
+            .then(response => (
+                this.product = response.data
+            ));
+    }
 }
 
 </script>
 
 <style>
+
 </style>

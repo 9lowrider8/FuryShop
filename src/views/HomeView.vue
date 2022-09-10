@@ -14,33 +14,11 @@
           alt="" srcset=""></swiper-slide>
     </swiper>
     <div id="discount">
-      <ul>
-        <li>
-          <router-link to="product/11">
-            <img
-              src="https://dkstatics-public.digikala.com/digikala-adservice-banners/5cd769d60300a3cf32f9f0c43422b0517acef09f_1661597052.jpg?x-oss-process=image/quality,q_95"
-              alt="">
-          </router-link>
-        </li>
-        <li>
-          <router-link to="product/22">
-            <img
-              src="https://dkstatics-public.digikala.com/digikala-adservice-banners/0283930dca2a437d99c1ac1a141809e0f72427a7_1661350324.jpg?x-oss-process=image/quality,q_95"
-              alt="">
-          </router-link>
-        </li>
-        <li>
-          <router-link to="product/33">
-            <img
-              src="https://dkstatics-public.digikala.com/digikala-adservice-banners/ca65c9fdce4fd3d742c14012cbb853f832cb0eea_1661582505.jpg?x-oss-process=image/quality,q_95"
-              alt="">
-          </router-link>
-        </li>
-        <li>
-          <router-link to="product/66">
-            <img
-              src="https://dkstatics-public.digikala.com/digikala-adservice-banners/97e65966c7e556eb1ac0149e3114873f0b02463d_1661357273.jpg?x-oss-process=image/quality,q_95"
-              alt="">
+      <ul >
+        <li v-for="(item, index) in discountProducts" :key="index">
+          <router-link :to="{ path: '/product/'+ item.id}">
+            <img :src="item.image" alt="">
+            
           </router-link>
         </li>
       </ul>
@@ -67,9 +45,9 @@
       :freeMode="true" :grabCursor="true" :centeredSlides="true"
       :modules="modules" class="mySwiper" id="secondswiper">
       <swiper-slide id="slide" class="card" v-for="(item, index) in suggestedProducts" :key="index">
-        <a href="">
-          <img width="200" height="150" :src="item.image" alt=""><span>{{ item.title }}</span>
-        </a>
+        <router-link :to="{ path: '/product/'+ item.id}">
+          <img width="200" height="100" :src="item.image" alt=""><span>{{ item.title }}</span>
+        </router-link>
       </swiper-slide>
     </swiper>
     <div class="banner">
@@ -83,7 +61,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination, FreeMode } from 'swiper';
 
@@ -91,7 +70,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "swiper/css/free-mode";
-
+import axios from 'axios'
 export default {
   name: "App",
   components: {
@@ -105,9 +84,8 @@ export default {
   },
   data() {
     return {
-      discountProducts: [],
+      discountProducts: "",
       suggestedProducts: "",
-
     }
   },
   created() {
@@ -116,7 +94,11 @@ export default {
       .then(response => (
         this.suggestedProducts = response.data
       ));
-    console.log(this.suggestedProducts)
+      axios
+      .get('https://fakestoreapi.com/products?limit=4')
+      .then(response => (
+        this.discountProducts = response.data
+      ))
   }
 }
 </script>
